@@ -5,9 +5,10 @@ const ObjectId = require('mongoose').Types.ObjectId;
 
 const User = require('../models/user.js');
 
+
+
 //API section 
 //basepath== 'http://localhost:3000/users;
-
 
 //GET API --start--
 router.get('/',(req,res)=>{
@@ -19,9 +20,11 @@ router.get('/',(req,res)=>{
             console.log('Error occured in fetching data:' + err);
         }
     })
-});
-        
+});        
 //GET API --end--
+
+
+
 
 
 //GET BT ID API --start--
@@ -45,7 +48,6 @@ router.get('/:id',(req,res)=>{
 
 
 
-
 //Post API --start--
 router.post('/',(req,res)=>{
     let user = new User({
@@ -64,6 +66,29 @@ router.post('/',(req,res)=>{
     })
 });
 //Post API --end--
+
+
+
+
+//DELETE/DELETE BY ID API --start--
+router.delete('/:id',(req,res)=>{
+    
+    if(ObjectId.isValid(req.params.id)){
+        User.findByIdAndRemove(req.params.id,(err,doc)=>{
+            if(!err){
+                res.send(doc);
+            }
+            else{
+                console.log('Error occured in Deleting data:' + err);
+            }
+        })
+    }
+    else{
+        return res.status(400).send('No such record found with ID:'+req.params.id);
+    }
+});
+//GET BY ID API --end--
+
 
 
 module.exports = router;
