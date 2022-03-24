@@ -87,7 +87,7 @@ router.delete('/:id',(req,res)=>{
         return res.status(400).send('No such record found with ID:'+req.params.id);
     }
 });
-//GET BY ID API --end--
+//DELETE/DELETE BY ID API --end--
 
 
 
