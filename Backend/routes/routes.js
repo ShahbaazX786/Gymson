@@ -6,6 +6,23 @@ const User = require('../models/user.js');
 //API section 
 //basepath== 'http://localhost:3000/users;
 
+
+//GET API --start--
+router.get('/',(req,res)=>{
+    User.find((err,doc)=>{
+        if(!err){
+            res.send(doc);
+        }
+        else{
+            console.log('Error occured in fetching data:' + err);
+        }
+    })
+});
+        
+//GET API --end--
+
+
+
 //Post API --start--
 router.post('/',(req,res)=>{
     let user = new User({
