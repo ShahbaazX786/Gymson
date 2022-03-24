@@ -48,6 +48,8 @@ router.get('/:id',(req,res)=>{
 
 
 
+
+
 //Post API --start--
 router.post('/',(req,res)=>{
     let user = new User({
@@ -70,6 +72,36 @@ router.post('/',(req,res)=>{
 
 
 
+
+//PUT/UPDATE BY ID API --start--
+router.put('/:id',(req,res)=>{
+    
+    if(ObjectId.isValid(req.params.id)){
+        let user = {
+            name : req.body.name,
+            age : req.body.age,
+            city : req.body.city
+        };
+
+        User.findByIdAndUpdate(req.params.id, {$set:user},{new:true},(err,doc)=>{
+            if(!err){
+                res.send(doc);
+            }
+            else{
+                console.log('Error occured in updating data:' + err);
+            }
+        })
+    }
+    else{
+        return res.status(400).send('No such record found with ID:'+req.params.id);
+    }
+});
+//PUT/UPDATE BY ID API --end--
+
+
+
+
+
 //DELETE/DELETE BY ID API --start--
 router.delete('/:id',(req,res)=>{
     
@@ -88,7 +120,6 @@ router.delete('/:id',(req,res)=>{
     }
 });
 //DELETE/DELETE BY ID API --end--
-
 
 
 module.exports = router;
