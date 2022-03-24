@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const ObjectId = require('mongoose').Types.ObjectId;
+
 const User = require('../models/user.js');
 
 //API section 
@@ -20,6 +22,27 @@ router.get('/',(req,res)=>{
 });
         
 //GET API --end--
+
+
+//GET BT ID API --start--
+router.get('/:id',(req,res)=>{
+    
+    if(ObjectId.isValid(req.params.id)){
+        User.findById(req.params.id,(err,doc)=>{
+            if(!err){
+                res.send(doc);
+            }
+            else{
+                console.log('Error occured in fetching data:' + err);
+            }
+        })
+    }
+    else{
+        return res.status(400).send('No such record found with ID:'+req.params.id);
+    }
+});
+//GET BY ID API --end--
+
 
 
 
