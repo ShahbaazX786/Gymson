@@ -1,3 +1,4 @@
+import { TeamComponent } from './Components/team/team.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { CustomercareComponent } from './Components/customercare/customercare.component';
 import { HistoryComponent } from './Components/history/history.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'features',component:FeaturesComponent},
   {path:'locateus',component:LocateComponent},
   {path:'pricing',component:PricingComponent},
+  {path:'team',component:TeamComponent},
   {path:'history',component:HistoryComponent},
   {path:'customersupport',component:CustomercareComponent},
   {path:'contactus',component:ContactComponent},

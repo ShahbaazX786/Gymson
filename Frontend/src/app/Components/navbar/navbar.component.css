@@ -11,6 +11,10 @@
 #nav-icon {
   padding-left: 8px;
 }
+.rightt{
+  float: right;
+  padding-right: 0px;
+}
 
 /* CSS */
 .button-33 {

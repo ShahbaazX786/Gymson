@@ -13,6 +13,7 @@ import { LocateComponent } from './Components/locate/locate.component';
 import { HistoryComponent } from './Components/history/history.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { CustomercareComponent } from './Components/customercare/customercare.component';
+import { TeamComponent } from './Components/team/team.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CustomercareComponent } from './Components/customercare/customercare.co
     LocateComponent,
     HistoryComponent,
     ContactComponent,
-    CustomercareComponent
+    CustomercareComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
