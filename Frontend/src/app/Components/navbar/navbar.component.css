@@ -1,9 +1,6 @@
-.rightt {
-  margin-top: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
+.navbar-nav navbar-right{
+  padding-left: 100px;
 }
-
 .navbar-brand {
   padding-left: 10px;
 }
@@ -11,10 +8,7 @@
 #nav-icon {
   padding-left: 8px;
 }
-.rightt{
-  float: right;
-  padding-right: 0px;
-}
+
 
 /* CSS */
 .button-33 {

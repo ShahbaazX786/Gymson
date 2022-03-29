@@ -14,6 +14,10 @@ import { HistoryComponent } from './Components/history/history.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { CustomercareComponent } from './Components/customercare/customercare.component';
 import { TeamComponent } from './Components/team/team.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//ngx-bootstrap
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { TeamComponent } from './Components/team/team.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
