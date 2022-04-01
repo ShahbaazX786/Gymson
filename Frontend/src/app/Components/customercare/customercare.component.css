@@ -1,0 +1,31 @@
+#col1{
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 80px;
+}
+
+#col2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.pic {
+  max-width: 100%;
+  width:auto;
+  max-height: 100%;
+  height: auto;
+  object-fit:contain;
+}
+
+
+@media  only screen and (max-width:992) {
+  #col2{
+    display: none;
+  }
+
+  img.pic{
+    display: none;
+  }
+}
